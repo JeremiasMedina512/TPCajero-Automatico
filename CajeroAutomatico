@@ -21,6 +21,29 @@ public class CajeroAutomatico {
 		this.dni = dni;
 		this.contrasenia = contrasenia;
 	}
+package cajeroautomatico;
+
+public class cajeroAutomatico {
+
+	private String nombre;
+	private String apellido;
+	private long dni;
+	private int saldo; /*(Math.random()*10000);*/
+	private String contrasenia;
+	
+	private int posicionVector;
+	private boolean salir = false;
+	
+	public cajeroAutomatico() {
+		
+	}
+
+	public cajeroAutomatico(String nombre, String apellido, long dni, String contrasenia) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.contrasenia = contrasenia;
+	}
 
 	public void depositarSaldo(int saldo) { //DEPOSITAR
 		this.saldo += saldo;
