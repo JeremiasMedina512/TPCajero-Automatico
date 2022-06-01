@@ -1,4 +1,4 @@
-package cajeroAutomatico;
+package cajeroautomatico;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class MainCajero {
 		System.out.println("INICIO DEL PROGRAMA**********");
 
 		Scanner teclado = new Scanner(System.in);
-		CajeroAutomatico[] usuarioCajero;
+		cajeroAutomatico[] usuarioCajero;
 
 		String nombre = "";
 		String apellido = "";
@@ -35,7 +35,7 @@ public class MainCajero {
 			cantUsuarios = teclado.nextInt();
 		}
 
-		usuarioCajero = new CajeroAutomatico[cantUsuarios];
+		usuarioCajero = new cajeroAutomatico[cantUsuarios];
 
 		for (int i = 0; i < usuarioCajero.length; i++) {
 			
@@ -71,7 +71,7 @@ public class MainCajero {
 				contrasenia = teclado.next();
 			}
 
-			usuarioCajero[i] = new CajeroAutomatico(nombre, apellido, dni, contrasenia);
+			usuarioCajero[i] = new cajeroAutomatico(nombre, apellido, dni, contrasenia);
 
 		}
 
@@ -209,7 +209,7 @@ public class MainCajero {
 						break;
 
 					case 2:
-
+						
 						System.out.println("\n2. EXTRACCION ----------");
 						int extraccion = 0;
 
@@ -217,19 +217,23 @@ public class MainCajero {
 								+ usuarioCajero[posicion].getSaldo() + " )");
 						extraccion = teclado.nextInt();
 
-						while (extraccion > usuarioCajero[posicion].getSaldo()) {
+							
 
+						
+						
+						if (extraccion > usuarioCajero[posicion].getSaldo()) {
 							System.out.println("\nERROR. No puede retirar mas de lo que posee");
 							System.out.println("Ingrese un monto inferior a lo que tiene depositado para extraer");
-							extraccion = teclado.nextInt();
-
 						}
+							else {
+							
 
 						System.out.println("");
 						System.out.println("Ha extraido " + extraccion);
 						System.out.println("Saldo anterior: " + usuarioCajero[posicion].getSaldo());
 						usuarioCajero[posicion].extraerSaldo(extraccion);
 						System.out.println("Saldo actual:" + usuarioCajero[posicion].getSaldo());
+							}
 
 						break;
 
@@ -289,7 +293,7 @@ public class MainCajero {
 
 						break;
 
-					default: // Fijarse si es posible omitir (no escribir) la opcion default
+					default:
 
 						System.out.println("\nOpcion invalida");
 
