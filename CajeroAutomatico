@@ -1,0 +1,82 @@
+package cajeroAutomatico;
+
+public class CajeroAutomatico {
+
+	private String nombre;
+	private String apellido;
+	private long dni;
+	private int saldo = (int)(Math.random()*10000);
+	private String contrasenia;
+	
+	private int posicionVector;
+	private boolean salir = false;
+	
+	public CajeroAutomatico() {
+		
+	}
+
+	public CajeroAutomatico(String nombre, String apellido, long dni, String contrasenia) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.dni = dni;
+		this.contrasenia = contrasenia;
+	}
+
+	public void depositarSaldo(int saldo) { //DEPOSITAR
+		this.saldo += saldo;
+	}
+
+	public int extraerSaldo(int extraccion) { //EXTRAER
+		this.saldo -= extraccion;
+		return this.saldo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public long getDni() {
+		return dni;
+	}
+
+	public void setDni(long dni) {
+		this.dni = dni;
+	}
+
+	public int getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+	
+	public int getPosicionVector() {
+		return posicionVector;
+	}
+	
+	public void setPosicionVector(int posicion) {
+		this.posicionVector = posicion;
+	}
+
+}
